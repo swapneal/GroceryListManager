@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../../assets/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://bootswatch.com/4/yeti/bootstrap.min.css"
+    />
+
+    <title>Grocery List Manager</title>
+  </head>
+
+  <body>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2 class="panel-title" style="text-align: center;">
+                <i
+                  class="fas fa-shopping-cart text-primary"
+                  style="margin-right: 2px;"
+                ></i
+                >Grocery List Manager
+              </h2>
+            </div>
+            <div class="panel-body" style="margin-top: 20px;">
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter Grocery Items"
+                  aria-describedby="basic-addon1"
+                  [(ngModel)]="task.name"
+                />
+                <span class="input-group-addon" id="basic-addon1"
+                  ><i
+                    class="fas fa-plus-circle fa-2x"
+                    aria-hidden="true"
+                    (click)="addItem()"
+                    style="margin-left: 10px; "
+                  ></i>
+                </span>
+              </div>
+            </div>
+            <div *ngIf="isListPresent" style="margin-top: 50px;">
+              <h3 class="panel-title">
+                <i
+                  class="fas fa-shopping-cart text-primary"
+                  style="margin-right: 2px;"
+                ></i
+                >Grocery List
+              </h3>
+              <ul class="list-group">
+                <li *ngFor="let task of tasks" class="list-group-item">
+                  <span
+                    (click)="purchaseItem(task)"
+                    [ngClass]="{ strike: task.strike }"
+                  >
+                    {{ task.name }}
+                  </span>
+                  <i
+                    class="fas fa-trash fa-large fa-pull-right"
+                    (click)="deleteItem(task)"
+                  ></i>
+                  <i
+                    class="far fa-edit fa-large fa-pull-right"
+                    (click)="editItem(task)"
+                    style="margin-left: 5px;"
+                  ></i>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
