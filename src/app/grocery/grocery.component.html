@@ -47,20 +47,25 @@
             </div>
             <div
               *ngIf="isListPresent"
-              style="margin-top: 50px;font-size: 24px;"
+              style="margin-top: 50px; text-align: left; width: 22%;"
             >
-              <h3 class="panel-title" style="text-align: left;">
+              <h3 class="panel-title">
                 <i
                   class="fas fa-list text-primary"
-                  style="margin-right: 2px;"
+                  style="margin: 0px 5px 0px 5px;"
                 ></i
-                >Grocery Items List
+                >Grocery Item List
               </h3>
               <ul class="list-group">
-                <li *ngFor="let task of tasks" class="list-group-item">
+                <li
+                  *ngFor="let task of tasks"
+                  class="list-group-item"
+                  
+                >
                   <span
                     (click)="purchaseItem(task)"
                     [ngClass]="{ strike: task.strike }"
+                    style="font-weight:bold;font-size: 16px; line-height: 1;"
                   >
                     {{ task.name }}
                   </span>
