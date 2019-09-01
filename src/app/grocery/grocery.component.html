@@ -45,13 +45,16 @@
                 </span>
               </div>
             </div>
-            <div *ngIf="isListPresent" style="margin-top: 50px;font-size: 24px;">
-              <h3 class="panel-title">
+            <div
+              *ngIf="isListPresent"
+              style="margin-top: 50px;font-size: 24px;"
+            >
+              <h3 class="panel-title" style="text-align: left;">
                 <i
-                  class="fas fa-shopping-cart text-primary"
+                  class="fas fa-list text-primary"
                   style="margin-right: 2px;"
                 ></i
-                >Grocery List
+                >Grocery Items List
               </h3>
               <ul class="list-group">
                 <li *ngFor="let task of tasks" class="list-group-item">
@@ -68,7 +71,6 @@
                   <i
                     class="far fa-edit fa-large fa-pull-right"
                     (click)="editItem(task)"
-                    style="margin-left: 5px;"
                   ></i>
                 </li>
               </ul>
