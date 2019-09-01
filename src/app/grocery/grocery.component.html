@@ -9,25 +9,24 @@
       rel="stylesheet"
       href="https://bootswatch.com/4/yeti/bootstrap.min.css"
     />
-
     <title>Grocery List Manager</title>
   </head>
 
   <body>
-    <div class="container mt-4">
-      <div class="row">
-        <div class="col-md-6">
+    <div class="container mt-3">
+      <div class="row" style="text-align: center;">
+        <div class="col-md-12">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2 class="panel-title" style="text-align: center;">
+              <h2 class="panel-title">
                 <i
                   class="fas fa-shopping-cart text-primary"
-                  style="margin-right: 2px;"
+                  style="margin-right: 5px; vertical-align: middle;"
                 ></i
                 >Grocery List Manager
               </h2>
             </div>
-            <div class="panel-body" style="margin-top: 20px;">
+            <div class="panel-body" style="margin-top: 50px;">
               <div class="input-group">
                 <input
                   type="text"
@@ -41,12 +40,12 @@
                     class="fas fa-plus-circle fa-2x"
                     aria-hidden="true"
                     (click)="addItem()"
-                    style="margin-left: 10px; "
+                    style="margin-left: 10px; margin-top: 3px;"
                   ></i>
                 </span>
               </div>
             </div>
-            <div *ngIf="isListPresent" style="margin-top: 50px;">
+            <div *ngIf="isListPresent" style="margin-top: 50px;font-size: 24px;">
               <h3 class="panel-title">
                 <i
                   class="fas fa-shopping-cart text-primary"
